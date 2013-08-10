@@ -1,12 +1,90 @@
 Deploying Schemes
 Changed database context to 'BlogDB'.
-Msg 102, Level 15, State 1, Server DANDI-PC, Line 15
-Incorrect syntax near 'ASCasd'.
-Msg 319, Level 15, State 1, Server DANDI-PC, Line 17
-Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Ran - SCHEME - "ClearAll.sql"
+Changed database context to 'BlogDB'.
+Ran - SCHEME - "Users.sql"
+Changed database context to 'BlogDB'.
 Ran - SCHEME - "Tags.sql"
+Changed database context to 'BlogDB'.
+Ran - SCHEME - "Articles.sql"
+Changed database context to 'BlogDB'.
+Ran - SCHEME - "Comments.sql"
+Changed database context to 'BlogDB'.
+Ran - SCHEME - "TagsInArticles.sql"
 Deploying Schemes Completed
 Deploying Stored Procedures
 Deploying Stored Procedures Completed
 Deploying Datas
+Changed database context to 'BlogDB'.
+
+(1 rows affected)
+
+(1 rows affected)
+Ran - DATA - "AddUsers.sql"
+Changed database context to 'BlogDB'.
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+Ran - DATA - "AddTags.sql"
+Changed database context to 'BlogDB'.
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+Ran - DATA - "AddArticles.sql"
+Changed database context to 'BlogDB'.
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+Ran - DATA - "AddComments.sql"
+Changed database context to 'BlogDB'.
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+
+(1 rows affected)
+Ran - DATA - "AddTagsInArticles.sql"
 Deploying Datas Compeleted

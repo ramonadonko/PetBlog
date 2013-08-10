@@ -1,8 +1,7 @@
 USE [BlogDB]
-
 GO
 
-/****** Object:  Table [dbo].[Tags]    Script Date: 2013.08.10. 12:15:02 ******/
+/****** Object:  Table [dbo].[Users]    Script Date: 2013.08.10. 12:45:18 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -15,16 +14,18 @@ IF (EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Articles
 	END
 ELSE
 	BEGIN
-		CREATE TABLE [dbo].[Tags]
+
+		CREATE TABLE [dbo].[Users]
 		(
-			 [ID]	INT 			IDENTITY(1,1)	NOT NULL
-			,[Name]	NVARCHAR(128) 					NOT NULL
-			,CONSTRAINT [PK_Tags] PRIMARY KEY CLUSTERED 
+			 [ID]	INT				IDENTITY(1,1)	NOT NULL
+			,[Name]	NVARCHAR(50)					NOT NULL
+			,CONSTRAINT [PK_Users] PRIMARY KEY CLUSTERED 
 			(
 				[ID] ASC
 			)
 			WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
-		) ON [PRIMARY]
+		) 
+		ON [PRIMARY]
 	END
 GO
 

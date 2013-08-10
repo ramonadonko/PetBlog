@@ -1,0 +1,12 @@
+Deploying Schemes
+Changed database context to 'BlogDB'.
+Msg 102, Level 15, State 1, Server DANDI-PC, Line 15
+Incorrect syntax near 'ASCasd'.
+Msg 319, Level 15, State 1, Server DANDI-PC, Line 17
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Ran - SCHEME - "Tags.sql"
+Deploying Schemes Completed
+Deploying Stored Procedures
+Deploying Stored Procedures Completed
+Deploying Datas
+Deploying Datas Compeleted

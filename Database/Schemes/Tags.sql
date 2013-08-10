@@ -1,0 +1,32 @@
+USE [BlogDB]
+
+GO
+
+/****** Object:  Table [dbo].[Tags]    Script Date: 2013.08.10. 12:15:02 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+-- Drop the table if it is already exists in the database
+IF (EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Tags'))
+	BEGIN
+		DROP TABLE Tags
+	END
+
+CREATE TABLE [dbo].[Tags]
+(
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](128) NOT NULL,
+	CONSTRAINT [PK_Tags] PRIMARY KEY CLUSTERED 
+	(
+		[ID] ASC
+	)
+	WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+

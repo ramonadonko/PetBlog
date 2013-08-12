@@ -1,0 +1,8 @@
+C:\Users\Hódocska\Documents\GitHub\PetBlog\Blog\Data\bin\Debug\Data.dll.config
+C:\Users\Hódocska\Documents\GitHub\PetBlog\Blog\Data\bin\Debug\Data.dll
+C:\Users\Hódocska\Documents\GitHub\PetBlog\Blog\Data\bin\Debug\Data.pdb
+C:\Users\Hódocska\Documents\GitHub\PetBlog\Blog\Data\bin\Debug\EntityFramework.dll
+C:\Users\Hódocska\Documents\GitHub\PetBlog\Blog\Data\bin\Debug\EntityFramework.xml
+C:\Users\Hódocska\Documents\GitHub\PetBlog\Blog\Data\obj\Debug\Data.csprojResolveAssemblyReference.cache
+C:\Users\Hódocska\Documents\GitHub\PetBlog\Blog\Data\obj\Debug\Data.dll
+C:\Users\Hódocska\Documents\GitHub\PetBlog\Blog\Data\obj\Debug\Data.pdb

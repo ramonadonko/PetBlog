@@ -18,72 +18,20 @@ Deploying Datas
 Changed database context to 'BlogDB'.
 
 (1 rows affected)
-
-(1 rows affected)
 Ran - DATA - "AddUsers.sql"
 Changed database context to 'BlogDB'.
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
 
 (1 rows affected)
 Ran - DATA - "AddTags.sql"
 Changed database context to 'BlogDB'.
 
 (1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
 Ran - DATA - "AddArticles.sql"
 Changed database context to 'BlogDB'.
 
 (1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
 Ran - DATA - "AddComments.sql"
 Changed database context to 'BlogDB'.
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
-
-(1 rows affected)
 
 (1 rows affected)
 Ran - DATA - "AddTagsInArticles.sql"

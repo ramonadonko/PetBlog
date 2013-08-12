@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlogDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BlogDBModelStoreContainer">
+    <EntitySet Name="Articles" EntityType="BlogDBModel.Store.Articles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comments" EntityType="BlogDBModel.Store.Comments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tags" EntityType="BlogDBModel.Store.Tags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TagsInArticles" EntityType="BlogDBModel.Store.TagsInArticles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="BlogDBModel.Store.Users" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Articles_Users" Association="BlogDBModel.Store.FK_Articles_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Articles" EntitySet="Articles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Articles" Association="BlogDBModel.Store.FK_Comments_Articles">
+      <End Role="Articles" EntitySet="Articles" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Users" Association="BlogDBModel.Store.FK_Comments_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TagsInArticles_Articles" Association="BlogDBModel.Store.FK_TagsInArticles_Articles">
+      <End Role="Articles" EntitySet="Articles" />
+      <End Role="TagsInArticles" EntitySet="TagsInArticles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TagsInArticles_Tags" Association="BlogDBModel.Store.FK_TagsInArticles_Tags">
+      <End Role="Tags" EntitySet="Tags" />
+      <End Role="TagsInArticles" EntitySet="TagsInArticles" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Articles">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" Nullable="false" MaxLength="2048" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ArticleID" Type="int" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedByUserID" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" Nullable="false" MaxLength="1024" />
+  </EntityType>
+  <EntityType Name="Tags">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="128" />
+  </EntityType>
+  <EntityType Name="TagsInArticles">
+    <Key>
+      <PropertyRef Name="ArticleID" />
+      <PropertyRef Name="TagID" />
+    </Key>
+    <Property Name="ArticleID" Type="int" Nullable="false" />
+    <Property Name="TagID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Articles_Users">
+    <End Role="Users" Type="BlogDBModel.Store.Users" Multiplicity="1" />
+    <End Role="Articles" Type="BlogDBModel.Store.Articles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Articles">
+        <PropertyRef Name="CreatedByUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Articles">
+    <End Role="Articles" Type="BlogDBModel.Store.Articles" Multiplicity="1" />
+    <End Role="Comments" Type="BlogDBModel.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="ArticleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Users">
+    <End Role="Users" Type="BlogDBModel.Store.Users" Multiplicity="1" />
+    <End Role="Comments" Type="BlogDBModel.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="CreatedByUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TagsInArticles_Articles">
+    <End Role="Articles" Type="BlogDBModel.Store.Articles" Multiplicity="1" />
+    <End Role="TagsInArticles" Type="BlogDBModel.Store.TagsInArticles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Articles">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TagsInArticles">
+        <PropertyRef Name="ArticleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TagsInArticles_Tags">
+    <End Role="Tags" Type="BlogDBModel.Store.Tags" Multiplicity="1" />
+    <End Role="TagsInArticles" Type="BlogDBModel.Store.TagsInArticles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tags">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TagsInArticles">
+        <PropertyRef Name="TagID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -7,16 +7,10 @@ namespace Blog.Models
 {
     public class User
     {
-        public User()
-        {
-            this.Articles = new HashSet<Article>();
-            this.Comments = new HashSet<Comment>();
-        }
-
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<Article> Articles { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
+        public IEnumerable<Article> Articles { get; set; }
+        public IEnumerable<CommentList> Comments { get; set; }
     }
 }
